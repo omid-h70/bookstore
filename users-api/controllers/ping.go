@@ -1,10 +1,9 @@
 package controllers
 
 import (
-	"github.com/labstack/echo/v4"
-	"net/http"
+	"github.com/omid-h70/bookstore/users-api/adapters/controller"
 )
 
-func Ping(c echo.Context) error {
-	return c.String(http.StatusOK, "Hello, World!")
+func Ping(request *controller.Request) controller.Response {
+	return controller.Response{}
 }

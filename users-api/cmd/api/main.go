@@ -12,6 +12,5 @@ func Test(r *router.Router) {
 
 func main() {
 	fmt.Println("Hi i'm up")
-
 	app.StartServer()
 }
