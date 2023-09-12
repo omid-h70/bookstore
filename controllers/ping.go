@@ -1,9 +1,10 @@
 package controllers
 
-//import (
-//	"github.com/omid-h70/bookstore/users-api/adapters/controller"
-//)
-//
-//func Ping(request *controller.Request) controller.Response {
-//	return controller.Response{}
-//}
+import (
+	"github.com/labstack/echo/v4"
+	"net/http"
+)
+
+func Pong(c echo.Context) error {
+	return c.String(http.StatusOK, "Pong")
+}
