@@ -2,15 +2,15 @@ package app
 
 import (
 	echo "github.com/labstack/echo/v4"
-	"github.com/omid-h70/bookstore/users-api/util"
+	"github.com/omid-h70/bookstore/users-api/utils"
 )
 
 type App struct {
 	mux    *echo.Echo
-	config *util.Config
+	config *utils.Config
 }
 
-func NewApp(config *util.Config, echoMux *echo.Echo) App {
+func NewApp(config *utils.Config, echoMux *echo.Echo) App {
 	return App{
 		config: config,
 		mux:    echoMux,

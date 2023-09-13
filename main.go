@@ -4,13 +4,13 @@ import (
 	"fmt"
 	"github.com/labstack/echo/v4"
 	"github.com/omid-h70/bookstore/users-api/app"
-	"github.com/omid-h70/bookstore/users-api/util"
+	"github.com/omid-h70/bookstore/users-api/utils"
 	"log"
 )
 
 // main
 func main() {
-	cfg := util.Config{
+	cfg := utils.Config{
 		HttpServerAddress: ":8080",
 	}
 
