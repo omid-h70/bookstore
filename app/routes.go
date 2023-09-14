@@ -6,12 +6,14 @@ import (
 )
 
 func (app *App) setRoutes(e *echo.Echo) {
+
+	h := controllers.NewHandler(app.store)
 	//readiness
-	e.GET("/ping", controllers.Pong)
+	e.GET("/ping", h.Pong)
 
 	//Users
-	e.GET("/search", controllers.SearchUser)
-	e.GET("/users/:user_id", controllers.GetUser)
-	e.POST("/users", controllers.CreateUser)
+	e.GET("/search", h.SearchUser)
+	e.GET("/users/:user_id", h.GetUser)
+	e.POST("/users", h.CreateUser)
 
 }
