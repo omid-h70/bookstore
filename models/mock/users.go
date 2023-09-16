@@ -4,6 +4,7 @@ import (
 	"errors"
 	"github.com/omid-h70/bookstore/users-api/domain"
 	"github.com/omid-h70/bookstore/users-api/models/db"
+	"time"
 )
 
 type UserMockDB struct {
@@ -39,8 +40,11 @@ func (u *UserMockDB) CreateUser(param db.CreateUserParam) (domain.User, error) {
 		return user, errors.New("already exist")
 	}
 
+	//Default string time format
+	//01-02-2006T15:04:05Z
 	newUser := domain.User{
-		UserId: param.UserID,
+		UserId:    param.UserID,
+		CreatedAt: time.Now(),
 	}
 	u.store[param.UserID] = newUser
 	return newUser, nil
